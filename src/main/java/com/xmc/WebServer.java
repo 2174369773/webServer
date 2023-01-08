@@ -24,12 +24,14 @@ public class WebServer {
     public void start(){
 
         try {
-            System.out.println("等待客户端链接");
-            Socket socket = serverSocket.accept();
-            System.out.println("一个客户端链接成功");
-            ClientHandler clientHandler = new ClientHandler(socket);
-            Thread thread = new Thread(clientHandler);
-            thread.start();
+            while (true) {
+                System.out.println("等待客户端链接");
+                Socket socket = serverSocket.accept();
+                System.out.println("一个客户端链接成功");
+                ClientHandler clientHandler = new ClientHandler(socket);
+                Thread thread = new Thread(clientHandler);
+                thread.start();
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }

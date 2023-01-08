@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<servlets>
+    <servlet name="/web/reg" classpath="com.service.RegService"></servlet>
+    <servlet  name="/web/login" classpath="com.service.LoginService"></servlet>
+    <servlet  name="/web/delete" classpath="com.service.DeleteService"></servlet>
+</servlets>
